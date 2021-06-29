@@ -41,7 +41,7 @@ import com.forfan.bigbang.util.LogUtil;
 import com.forfan.bigbang.util.RunningTaskUtil;
 import com.forfan.bigbang.util.ToastUtil;
 import com.forfan.bigbang.util.UrlCountUtil;
-import com.forfan.bigbang.util.XposedEnableUtil;
+//import com.forfan.bigbang.util.XposedEnableUtil;
 import com.shang.commonjar.contentProvider.SPHelper;
 
 import java.io.BufferedReader;
@@ -296,8 +296,8 @@ public class BigBangMonitorService extends AccessibilityService {
     }
 
     private synchronized void getText(AccessibilityEvent event){
-        if(XposedEnableUtil.isEnable())
-            return;
+//        if(XposedEnableUtil.isEnable())
+//            return;
         LogUtil.d(TAG,"getText:"+event);
         if (!monitorClick || event==null ) {
             return;
@@ -740,24 +740,24 @@ public class BigBangMonitorService extends AccessibilityService {
             }else if (intent.getAction().equals(ConstantUtil.FLOAT_REFRESH_WHITE_LIST_BROADCAST)){
                 readFloatWhiteList();
             }else if (intent.getAction().equals(ConstantUtil.UNIVERSAL_COPY_BROADCAST)){
-                if (XposedEnableUtil.isEnable()){
-                    sendBroadcast(new Intent(ConstantUtil.UNIVERSAL_COPY_BROADCAST_XP));
-                }else {
+//                if (XposedEnableUtil.isEnable()){
+//                    sendBroadcast(new Intent(ConstantUtil.UNIVERSAL_COPY_BROADCAST_XP));
+//                }else {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         UniversalCopy();
                     }
-                }
+//                }
             }else if (intent.getAction().equals(ConstantUtil.UNIVERSAL_COPY_BROADCAST_DELAY)){
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (XposedEnableUtil.isEnable()){
-                            sendBroadcast(new Intent(ConstantUtil.UNIVERSAL_COPY_BROADCAST_XP));
-                        }else {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                                UniversalCopy();
-                            }
-                        }
+//                        if (XposedEnableUtil.isEnable()){
+//                            sendBroadcast(new Intent(ConstantUtil.UNIVERSAL_COPY_BROADCAST_XP));
+//                        }else {
+//                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                                UniversalCopy();
+//                            }
+//                        }
                     }
                 },500);
 

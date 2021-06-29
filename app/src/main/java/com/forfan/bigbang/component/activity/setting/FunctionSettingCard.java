@@ -21,7 +21,7 @@ import com.forfan.bigbang.component.service.ListenClipboardService;
 import com.forfan.bigbang.util.ConstantUtil;
 import com.forfan.bigbang.util.SnackBarUtil;
 import com.forfan.bigbang.util.UrlCountUtil;
-import com.forfan.bigbang.util.XposedEnableUtil;
+//import com.forfan.bigbang.util.XposedEnableUtil;
 import com.forfan.bigbang.view.DialogFragment;
 import com.forfan.bigbang.view.HintTextView;
 import com.forfan.bigbang.view.SimpleDialog;
@@ -80,10 +80,10 @@ public class FunctionSettingCard extends AbsCard {
         monitorClickRl = (RelativeLayout) findViewById(R.id.monitor_click_rl);
         monitorClickHint = (HintTextView) findViewById(R.id.monitor_click_tv);
         totalSwitchRL = (RelativeLayout) findViewById(R.id.total_switch_rl);
-        if(XposedEnableUtil.isEnable()){
-            monitorClickHint.setHint(mContext.getString(R.string.xp_monitor_click_hint));
-            monitorClickHint.setMsg(mContext.getString(R.string.xp_monitor_click_msg));
-        }
+//        if(XposedEnableUtil.isEnable()){
+//            monitorClickHint.setHint(mContext.getString(R.string.xp_monitor_click_hint));
+//            monitorClickHint.setMsg(mContext.getString(R.string.xp_monitor_click_msg));
+//        }
         monitorClipBoardSwitch = (SwitchCompat) findViewById(R.id.monitor_clipboard_switch);
         monitorClickSwitch = (SwitchCompat) findViewById(R.id.monitor_click_switch);
         totalSwitchSwitch = (SwitchCompat) findViewById(R.id.total_switch_switch);
@@ -127,10 +127,10 @@ public class FunctionSettingCard extends AbsCard {
                 SPHelper.save(ConstantUtil.MONITOR_CLICK, monitorClick);
                 if (monitorClick) {
                     mContext.startService(new Intent(context, BigBangMonitorService.class));
-                    if (!BigBangMonitorService.isAccessibilitySettingsOn(mContext) && !XposedEnableUtil.isEnable()) {
-                        handler.removeCallbacks(showAccess);
-                        handler.postDelayed(showAccess, 2000);
-                    }
+//                    if (!BigBangMonitorService.isAccessibilitySettingsOn(mContext) && !XposedEnableUtil.isEnable()) {
+//                        handler.removeCallbacks(showAccess);
+//                        handler.postDelayed(showAccess, 2000);
+//                    }
                 }
                 mContext.sendBroadcast(new Intent(BROADCAST_BIGBANG_MONITOR_SERVICE_MODIFIED));
 

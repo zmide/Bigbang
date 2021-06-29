@@ -9,7 +9,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import com.forfan.bigbang.R;
 import com.forfan.bigbang.component.base.BaseActivity;
 import com.forfan.bigbang.util.ConstantUtil;
-import com.forfan.bigbang.util.XposedEnableUtil;
+// import com.forfan.bigbang.util.XposedEnableUtil;
 import com.shang.commonjar.contentProvider.SPHelper;
 
 /**
@@ -27,11 +27,11 @@ public class PickWordFragment extends BaseRecyclerFragment {
                 int index = 0;
                 if (!newAdapter.containsView(settingCard))
                     index = cardViews.size();
-                if (XposedEnableUtil.isEnable())
-                    index = index - 1;
-                if (!XposedEnableUtil.isEnable()) {
-                    newAdapter.addView(settingCard, index);
-                }
+//                if (XposedEnableUtil.isEnable())
+//                    index = index - 1;
+//                if (!XposedEnableUtil.isEnable()) {
+//                    newAdapter.addView(settingCard, index);
+//                }
             } else {
                 if (newAdapter.containsView(settingCard))
                     newAdapter.deleteView(settingCard);
@@ -53,12 +53,12 @@ public class PickWordFragment extends BaseRecyclerFragment {
         settingCard = new MonitorSettingCard(getActivity());
         cardViews.add(new GoToSettingCard(getActivity()));
         cardViews.add(new FunctionSettingCard(getActivity()));
-        if (XposedEnableUtil.isEnable()) {
-            cardViews.add(new XposedCard(getActivity()));
-        }
-        if (SPHelper.getBoolean(ConstantUtil.MONITOR_CLICK, true) && !XposedEnableUtil.isEnable()) {
-            cardViews.add(settingCard);
-        }
+//        if (XposedEnableUtil.isEnable()) {
+//            cardViews.add(new XposedCard(getActivity()));
+//        }
+//        if (SPHelper.getBoolean(ConstantUtil.MONITOR_CLICK, true) && !XposedEnableUtil.isEnable()) {
+//            cardViews.add(settingCard);
+//        }
         initLocalBroadcast();
     }
 

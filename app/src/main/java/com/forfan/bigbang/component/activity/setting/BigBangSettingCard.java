@@ -14,7 +14,7 @@ import com.forfan.bigbang.component.activity.SettingFloatViewActivity;
 import com.forfan.bigbang.component.activity.searchengine.SearchEngineActivity;
 import com.forfan.bigbang.util.ConstantUtil;
 import com.forfan.bigbang.util.UrlCountUtil;
-import com.forfan.bigbang.util.XposedEnableUtil;
+//import com.forfan.bigbang.util.XposedEnableUtil;
 import com.forfan.bigbang.view.HintTextView;
 import com.shang.commonjar.contentProvider.SPHelper;
 

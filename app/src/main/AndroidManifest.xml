@@ -57,10 +57,10 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".test.TestActivity">
 
-             <!--<intent-filter>-->
-             <!--<action android:name="android.intent.action.MAIN" />-->
-             <!--<category android:name="android.intent.category.LAUNCHER" />-->
-             <!--</intent-filter>-->
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".component.activity.screen.CaptureResultActivity"
@@ -109,10 +109,10 @@
             android:noHistory="true"
             android:process=":monitor"
             android:theme="@style/OverlayTheme" />
-        <activity
-            android:name="com.umeng.fb.ConversationActivity"
-            android:label="@string/app_name"
-            android:theme="@style/BaseAppTheme" />
+<!--        <activity-->
+<!--            android:name="com.umeng.fb.ConversationActivity"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:theme="@style/BaseAppTheme" />-->
 
         <service
             android:name=".component.service.BigBangMonitorService"
@@ -265,49 +265,55 @@
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <activity
             android:name=".component.activity.UniversalCopyActivity"
-            android:theme="@style/ScreenCaptureTheme"
-            android:excludeFromRecents="true"
-            android:noHistory="true"
             android:autoRemoveFromRecents="true"
-            android:exported="true" />
-        <activity android:name=".component.activity.TotalSwitchActivity"
-            android:theme="@style/ScreenCaptureTheme"
             android:excludeFromRecents="true"
+            android:exported="true"
             android:noHistory="true"
+            android:theme="@style/ScreenCaptureTheme" />
+        <activity
+            android:name=".component.activity.TotalSwitchActivity"
             android:autoRemoveFromRecents="true"
-            android:exported="true" ></activity>
-        <service android:name=".quicksetting.GlobalCopyTile"
-            android:label="@string/notify_copy_title"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/ScreenCaptureTheme"></activity>
+
+        <service
+            android:name=".quicksetting.GlobalCopyTile"
             android:icon="@drawable/notify_copy"
+            android:label="@string/notify_copy_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-        <service android:name=".quicksetting.ScreenCaptureTile"
-            android:label="@string/notify_srceen_cap"
+        <service
+            android:name=".quicksetting.ScreenCaptureTile"
             android:icon="@drawable/notify_screen"
+            android:label="@string/notify_srceen_cap"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-        <service android:name=".quicksetting.TotleSwitchTile"
-            android:label="@string/notify_total_switch_on"
+        <service
+            android:name=".quicksetting.TotleSwitchTile"
             android:icon="@drawable/notify_on"
+            android:label="@string/notify_total_switch_on"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
 
 
-        <activity android:name=".component.activity.KeepAliveActivity"
+        <activity
+            android:name=".component.activity.KeepAliveActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
             android:launchMode="singleInstance"
             android:noHistory="true"
-            android:finishOnTaskLaunch="true"
             android:process=":monitor"
             android:theme="@style/KeepAliveActivtyTheme" />
     </application>
